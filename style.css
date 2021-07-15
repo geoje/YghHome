@@ -7,7 +7,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  width: 1760px;
+  width: 2016px;
   height: 100%;
 
   margin: 0 auto;
@@ -67,7 +67,7 @@ seciton {
   padding-bottom: 2rem;
 }
 .card {
-  width: 320px;
+  width: 640px;
   margin: 1rem;
 
   border-radius: 4px;
@@ -144,6 +144,14 @@ seciton {
   border-radius: 12px;
 }
 
+@media (max-width: 2100px) {
+  body {
+    width: 1760px;
+  }
+  .card {
+    width: 320px;
+  }
+}
 @media (max-width: 1800px) {
   body {
     width: 1408px;
@@ -163,7 +171,8 @@ seciton {
   .card {
     width: calc(50% - 2rem);
   }
-  .card:hover {
+  .card:hover,
+  header > a > img:hover {
     transform: none;
   }
 }
