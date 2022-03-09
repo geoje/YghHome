@@ -42,20 +42,28 @@ header > a > h2 {
   color: rgb(60, 60, 60);
   cursor: pointer;
 }
-header > a > img {
-  display: block;
-  width: 40px;
-  height: 40px;
+
+.icon-github {
+  border-radius: 50%;
+  background-color: #fff;
+}
+header > a:not(:first-child) {
+  padding: 0.5rem;
+
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
   cursor: pointer;
 
   transition: transform 0.1s;
 }
-header > a > img:hover {
+header > a:not(:first-child):hover {
   transform: translateY(-2px);
 }
-.icon-github {
-  border-radius: 50%;
-  background-color: #fff;
+header > a > img {
+  display: block;
+  width: 30px;
+  height: 30px;
 }
 
 seciton {
