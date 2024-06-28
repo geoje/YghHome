@@ -8,5 +8,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: yghhome:alpine
+    image: yghhome:latest
     restart: unless-stopped
