@@ -1,0 +1,12 @@
+networks:
+  default:
+    external: true
+    name: npm
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yghhome:alpine
+    restart: unless-stopped
