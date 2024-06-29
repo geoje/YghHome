@@ -10,13 +10,13 @@ pipeline {
         
         stage('Stop') {
             steps {
-                sh 'docker-compose down || true'
+                sh 'docker compose down || true'
             }
         }
         
         stage('Run') {
             steps {
-                sh 'docker-compose up -d'
+                sh 'docker compose up -d'
             }
         }
     }
