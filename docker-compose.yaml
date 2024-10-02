@@ -1,9 +1,12 @@
+networks:
+  default:
+    external: true
+    name: npm
+
 services:
   fe:
     image: nginx:alpine
     restart: unless-stopped
-    ports:
-      - 80:80
     volumes:
       - .:/usr/share/nginx/html
     entrypoint:
