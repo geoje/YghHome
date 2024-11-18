@@ -1,14 +1,25 @@
 networks:
   default:
     external: true
-    name: npm
+    name: traefik
 
 services:
   fe:
     image: nginx:alpine
-    restart: unless-stopped
+    restart: on-failure:3
     volumes:
       - .:/usr/share/nginx/html
+    labels:
+      - traefik.enable=true
+      - traefik.http.services.home.loadbalancer.server.port=80
+      - traefik.http.routers.home.rule=Host(`ygh.kr`) || Host(`www.ygh.kr`)
+      - traefik.http.routers.home.entrypoints=websecure
+      - traefik.http.routers.home.tls=true
+      - traefik.http.routers.home.tls.certresolver=letsencrypt
+      - traefik.http.routers.home.middlewares=redirect-www
+      - traefik.http.middlewares.redirect-www.redirectregex.permanent=true
+      - traefik.http.middlewares.redirect-www.redirectregex.regex=^https://ygh.kr/(.*)
+      - traefik.http.middlewares.redirect-www.redirectregex.replacement=https://www.ygh.kr/$${1}
     entrypoint:
       - sh
       - -euc
