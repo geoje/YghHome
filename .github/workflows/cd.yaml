@@ -31,4 +31,4 @@ jobs:
           script: |
             cd ~/${{ github.event.repository.name }}
             docker compose down
-            docker compose up
+            docker compose up -d
