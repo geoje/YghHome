@@ -30,4 +30,5 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             cd ~/${{ github.event.repository.name }}
-            docker compose up -d
+            docker compose down
+            docker compose up
