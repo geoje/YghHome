@@ -32,7 +32,7 @@ configs:
         server_name localhost;
         root /usr/share/nginx/html;
         
-        location ~* \.(svg|png|xml|json|html|css|js)$ {
+        location ~* \.(svg|jpg|png|xml|json|html|css|js)$ {
           try_files $$uri $$uri/ =404;
         }
         location = / { index index.html; }
