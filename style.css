@@ -7,14 +7,14 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  width: 2000px;
   height: 100%;
 
   margin: 0 auto;
   background-color: rgb(248, 248, 248);
 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 a {
   all: unset;
@@ -76,7 +76,7 @@ seciton {
   padding-bottom: 2rem;
 }
 .card {
-  width: calc(50% - 2rem);
+  width: 300px;
   margin: 1rem;
 
   border-radius: 4px;
@@ -84,7 +84,9 @@ seciton {
   box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
   cursor: pointer;
 
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
 }
 .card:hover {
   transform: translateY(-4px);
@@ -112,7 +114,7 @@ seciton {
 .card-body > h4 {
   margin: 0 0 1em;
 
-  font-size: calc(16px + 1vw);
+  font-size: 1rem;
   text-align: center;
 }
 .card-body p {
@@ -127,58 +129,19 @@ seciton {
   text-overflow: ellipsis;
   word-break: break-all;
 
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.card-body > span {
-  display: inline-block;
-
-  font-size: 12px;
-  color: rgb(144, 144, 144);
-}
-.card-foot {
-  box-sizing: content-box;
-  padding: 0.5rem 0.5rem;
-
-  font-size: 12px;
-  border-top: 1px solid rgb(248, 248, 248);
-}
-.card-foot > span {
-  display: inline-block;
-  width: fit-content;
-  padding: 0.25rem 0.5rem;
-  margin: 0.25rem;
-
-  font-weight: 500;
-  color: #0366d6;
-  background-color: #f1f8ff;
-  border-radius: 12px;
-}
-
-@media (max-width: 2200px) {
-  body {
-    width: calc(100% - 200px);
-  }
-}
-@media (max-width: 1260px) {
-  body {
-    width: 1060px;
-  }
-}
-
 /* Mobile */
 @media (max-width: 1060px) {
-  body {
-    width: 100%;
-  }
-  .card:hover,
-  header > a > img:hover {
+  .card:hover {
     transform: none;
   }
 }
 @media (max-width: 767px) {
   .card {
     width: 100%;
-    min-width: 360px;
+    min-width: 0;
   }
 }
